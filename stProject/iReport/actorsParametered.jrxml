@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="actorsParametered" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11a068fb-8e16-4e18-99bb-38a5ac849169">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="Username" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     actors.`Username` AS actors_Username,
+     actors.`Password` AS actors_Password,
+     actors.`Role` AS actors_Role
+FROM
+     `actors` actors
+WHERE
+	actors. `Username` = $P{Username}]]>
+	</queryString>
+	<field name="actors_Username" class="java.lang.String"/>
+	<field name="actors_Password" class="java.lang.String"/>
+	<field name="actors_Role" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="132" forecolor="#009999" uuid="c5e37ef6-1733-45c2-8a18-50a2fb043c91"/>
+				<imageExpression><![CDATA["C:\\Users\\Madhawa\\Documents\\NetBeansProjects\\stProject\\iReport\\tree1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="194" y="0" width="359" height="93" forecolor="#009999" uuid="cf9b82b3-6c7d-4fdc-8b86-386b25284a13"/>
+				<textElement>
+					<font fontName="Yu Gothic" size="54" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Wings Airlines]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="325" y="93" width="99" height="29" uuid="32c20e2e-7aa2-4d2b-af0e-5ee2988e4dd1"/>
+				<textElement>
+					<font fontName="Yu Gothic" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Actor Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="89" splitType="Stretch">
+			<image>
+				<reportElement x="24" y="0" width="96" height="73" uuid="ad9dc300-c7e4-40f4-a50c-63f216d94721"/>
+				<imageExpression><![CDATA["tree2.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="83" width="551" height="1" uuid="815be06c-54be-470f-bbe0-353c8a12b3f6"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="159" y="13" width="132" height="20" forecolor="#000000" uuid="a77cd1a4-a544-4bab-a256-9334bdb139e9"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[actors_Username]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="303" y="13" width="251" height="18" uuid="fa28b9e7-c13b-4027-b219-1d0fefd23134"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actors_Username}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="159" y="33" width="132" height="20" forecolor="#000000" uuid="15dd9d92-d432-4d3e-94ea-8820328d15dc"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[actors_Password]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="303" y="33" width="251" height="18" uuid="18692fc4-666e-47dd-bf31-e1c6a45dc61b"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actors_Password}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="159" y="53" width="132" height="20" forecolor="#000000" uuid="f17a60e1-8e94-4a1d-b940-fef0ea294bc6"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[actors_Role]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="303" y="53" width="251" height="18" uuid="87a2a4ee-2704-4155-9776-2ddb578cd489"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actors_Role}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="91502d40-c329-4d50-8739-77eba15ec131"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="4e751479-9f5b-48e7-b800-0ac625540928"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="496" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="d30e12ab-d3fe-4973-8782-5884eeda184c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="410" y="0" width="69" height="13" forecolor="#FFFFFF" uuid="7ee1ba65-b1b9-4338-812a-f93885e1e46d"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="8f2933e6-bc7e-404f-a20d-f14939863c25"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

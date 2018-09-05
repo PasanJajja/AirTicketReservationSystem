@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticketparaless" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4e8e46af-6506-458c-9fe1-ceab327771f8">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     ticket.`ticketID` AS ticket_ticketID,
+     ticket.`username` AS ticket_username,
+     ticket.`departFlight` AS ticket_departFlight,
+     ticket.`returnFlight` AS ticket_returnFlight,
+     ticket.`noOfTickets` AS ticket_noOfTickets,
+     ticket.`packageName` AS ticket_packageName,
+     ticket.`price` AS ticket_price
+FROM
+     `ticket` ticket]]>
+	</queryString>
+	<field name="ticket_ticketID" class="java.lang.Integer"/>
+	<field name="ticket_username" class="java.lang.String"/>
+	<field name="ticket_departFlight" class="java.lang.String"/>
+	<field name="ticket_returnFlight" class="java.lang.String"/>
+	<field name="ticket_noOfTickets" class="java.lang.Integer"/>
+	<field name="ticket_packageName" class="java.lang.String"/>
+	<field name="ticket_price" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="2" width="555" height="134" uuid="d292a4ee-eb68-46c7-8aa0-3b116d5fec28"/>
+				<imageExpression><![CDATA["C:\\Users\\Madhawa\\Documents\\NetBeansProjects\\stProject\\iReport\\tree1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="255" y="0" width="300" height="62" forecolor="#009999" uuid="d94c52bf-a95b-4c81-bc8e-dd7f02cc343a"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Wings Airline]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="342" y="62" width="196" height="22" uuid="9a9ba899-3fee-434a-af75-508e9110fb07"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Ticket Details]]></text>
+			</staticText>
+			<image>
+				<reportElement x="641" y="2" width="140" height="134" uuid="87a89111-bc09-42f9-9cfd-34a3b273f728"/>
+				<imageExpression><![CDATA["C:\\Users\\Madhawa\\Documents\\NetBeansProjects\\stProject\\iReport\\tree2.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="a7c13d59-7321-441b-88d3-9325663d2c2a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="114" height="15" forecolor="#736343" uuid="574e8992-79b2-472c-9949-26cac0d9f046"/>
+				<text><![CDATA[ticket_ticketID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="114" height="15" forecolor="#736343" uuid="8603f654-cb60-46b1-b041-6a3b44f0f52f"/>
+				<text><![CDATA[ticket_username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="114" height="15" forecolor="#736343" uuid="0c41c495-b1d3-42ec-9e55-57ff6d95b521"/>
+				<text><![CDATA[ticket_departFlight]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="0" width="114" height="15" forecolor="#736343" uuid="34f6f027-018d-4482-a19a-253152627bd2"/>
+				<text><![CDATA[ticket_returnFlight]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="0" width="114" height="15" forecolor="#736343" uuid="021ffb27-5734-455f-8fd5-454759bbb630"/>
+				<text><![CDATA[ticket_noOfTickets]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="570" y="0" width="114" height="15" forecolor="#736343" uuid="7be45f53-e0bd-4274-a4a3-3023b910b660"/>
+				<text><![CDATA[ticket_packageName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="684" y="0" width="114" height="15" forecolor="#736343" uuid="64d74a96-3c00-4eb0-9f8b-2d166d5999ca"/>
+				<text><![CDATA[ticket_price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="632fccd7-6c04-464c-a5da-253dcfcb835d"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="2f4bdd0a-29a8-4841-bed6-f84ada065e9e"/>
+					<textFieldExpression><![CDATA[$F{ticket_ticketID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="8934accc-8ed7-48a1-a349-e79b2fa2d3ec"/>
+					<textFieldExpression><![CDATA[$F{ticket_username}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="114" height="15" uuid="f238195a-7750-4cc2-b256-f9d5fd040bd7"/>
+					<textFieldExpression><![CDATA[$F{ticket_departFlight}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="342" y="0" width="114" height="15" uuid="1b2f80d4-ffde-43b9-a2c9-0ccfdcf35ad2"/>
+					<textFieldExpression><![CDATA[$F{ticket_returnFlight}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="456" y="0" width="114" height="15" uuid="978c9315-dff5-455f-8b37-4b14eca5b980"/>
+					<textFieldExpression><![CDATA[$F{ticket_noOfTickets}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="570" y="0" width="114" height="15" uuid="0f2ba404-de6e-4dfb-9dde-74609cafb678"/>
+					<textFieldExpression><![CDATA[$F{ticket_packageName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="684" y="0" width="114" height="15" uuid="034272bc-d0bf-4951-b68c-d9d72c1b475d"/>
+					<textFieldExpression><![CDATA[$F{ticket_price}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="ab132e61-e803-4588-9c9c-2158d21df2b0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="fab66099-ea05-4df9-a0c0-386929b78cc7"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="ccc840bf-aad9-482d-a697-241e26ea7766"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="a0b6bcd7-b4f7-4b2a-94ab-4b8c88486efa"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="62d75f7c-78e1-41dd-bd03-d4299b594ae9"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

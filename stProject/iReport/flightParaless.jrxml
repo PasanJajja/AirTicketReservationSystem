@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="flightParaless" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4afabb2f-99a7-465d-a527-67a0cf7d2e2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     flight.`flightName` AS flight_flightName,
+     flight.`origin` AS flight_origin,
+     flight.`destination` AS flight_destination,
+     flight.`date` AS flight_date,
+     flight.`departTime` AS flight_departTime,
+     flight.`returnTime` AS flight_returnTime,
+     flight.`noOfSeats` AS flight_noOfSeats,
+     flight.`price` AS flight_price
+FROM
+     `flight` flight]]>
+	</queryString>
+	<field name="flight_flightName" class="java.lang.String"/>
+	<field name="flight_origin" class="java.lang.String"/>
+	<field name="flight_destination" class="java.lang.String"/>
+	<field name="flight_date" class="java.sql.Date"/>
+	<field name="flight_departTime" class="java.lang.String"/>
+	<field name="flight_returnTime" class="java.lang.String"/>
+	<field name="flight_noOfSeats" class="java.lang.Integer"/>
+	<field name="flight_price" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="554" height="136" uuid="92558821-5bab-478f-954c-612d8b883f29"/>
+				<imageExpression><![CDATA["C:\\Users\\Madhawa\\Documents\\NetBeansProjects\\stProject\\iReport\\tree1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="239" y="0" width="316" height="62" forecolor="#009999" uuid="a232fe6a-8228-41e9-a1ad-f84fd213430c"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Wings Airline]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="341" y="62" width="196" height="22" uuid="dd8b5453-b401-4ff0-ae72-a22a43056a57"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Flight Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42" uuid="e593d042-3b13-445a-8af8-3bd796f5037a"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image>
+				<reportElement x="612" y="13" width="140" height="123" uuid="ba714a4e-0698-4d9a-831e-e76b6a3c7c84"/>
+				<imageExpression><![CDATA["C:\\Users\\Madhawa\\Documents\\NetBeansProjects\\stProject\\iReport\\tree2.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="b193736d-9522-4403-93d9-ec4b1bc500c3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="100" height="15" forecolor="#736343" uuid="7e6b8ccb-d7e2-496d-9e3b-d4eeb03b022b"/>
+				<text><![CDATA[flight_flightName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="100" y="0" width="100" height="15" forecolor="#736343" uuid="ea2725ee-dc46-4b3a-a835-7dc5a68fad77"/>
+				<text><![CDATA[flight_origin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="0" width="100" height="15" forecolor="#736343" uuid="757ee60a-4839-48d8-9ba7-05a2842045d2"/>
+				<text><![CDATA[flight_destination]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="300" y="0" width="100" height="15" forecolor="#736343" uuid="eb48f9ed-12e4-4771-b253-f0114cb0edf5"/>
+				<text><![CDATA[flight_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="100" height="15" forecolor="#736343" uuid="3ff2c732-2901-414e-9df0-5e4b980d6a5b"/>
+				<text><![CDATA[flight_departTime]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="500" y="0" width="100" height="15" forecolor="#736343" uuid="bc7ce292-6f72-4eb3-a896-0770ca902a62"/>
+				<text><![CDATA[flight_returnTime]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="600" y="0" width="100" height="15" forecolor="#736343" uuid="7375fe88-5e22-477c-9990-b73ffb6ef00c"/>
+				<text><![CDATA[flight_noOfSeats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="700" y="0" width="100" height="15" forecolor="#736343" uuid="fb71901a-0189-41cc-9412-6cb9ec2e0a67"/>
+				<text><![CDATA[flight_price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="695de91b-ba1d-4688-a3f3-bf7207e9cc71"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="100" height="15" uuid="c2504e54-efde-4efc-a1a1-310883b4928f"/>
+					<textFieldExpression><![CDATA[$F{flight_flightName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="100" y="0" width="100" height="15" uuid="d18905f3-2304-4f8f-8456-4ef8405e2b2b"/>
+					<textFieldExpression><![CDATA[$F{flight_origin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="200" y="0" width="100" height="15" uuid="924c93b8-55cf-4d95-b64d-44e6b699f907"/>
+					<textFieldExpression><![CDATA[$F{flight_destination}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="300" y="0" width="100" height="15" uuid="c1f2c11d-688b-43a8-b2d9-dc32adaf8006"/>
+					<textFieldExpression><![CDATA[$F{flight_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="100" height="15" uuid="773db5af-6c3d-4837-9d0c-ffe670082bc6"/>
+					<textFieldExpression><![CDATA[$F{flight_departTime}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="500" y="0" width="100" height="15" uuid="938a929c-5516-4a0d-ad71-4e2cd9d64dc2"/>
+					<textFieldExpression><![CDATA[$F{flight_returnTime}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="600" y="0" width="100" height="15" uuid="985e03e3-19dc-47e9-865a-6b4a4544b0b6"/>
+					<textFieldExpression><![CDATA[$F{flight_noOfSeats}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="700" y="0" width="100" height="15" uuid="f61ffd94-835c-4e34-ab3c-14e31f58755a"/>
+					<textFieldExpression><![CDATA[$F{flight_price}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="95a365bf-bfe3-46f1-b1e2-31d9571e8a5a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="59c206a1-1565-4777-bb1f-573966ba3099"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="81b9430e-0d0c-4824-a032-5a566bea8862"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="8c158cc9-1169-410f-95a2-2dadc164e312"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="8a92546e-93ed-452f-abef-83b45b3fb8bf"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
